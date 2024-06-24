@@ -1,0 +1,18 @@
+<h1 id="tableLabel">Price Of drinks</h1>
+
+
+<p *ngIf="!Drinks"><em>Loading... Please refresh once the ASP.NET backend has started.</em></p>
+
+<table *ngIf="Drinks">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let drink of Drinks">
+          <td>{{ drink.name }}</td>
+          <td>{{ drink.totalPrice }}</td>
+        </tr>
+    </tbody>
+</table>
