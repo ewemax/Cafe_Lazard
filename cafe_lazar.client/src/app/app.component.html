@@ -11,8 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let drink of Drinks">
-          <td>{{ drink.name }}</td>
-          <td>{{ drink.totalPrice }}</td>
+          <td (click)="alert(drink.totalPrice)">{{ drink.name }}</td>
         </tr>
     </tbody>
 </table>

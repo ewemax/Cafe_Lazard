@@ -11,6 +11,8 @@ interface Drink {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent implements OnInit {
   public Drinks: Drink[] = [];
 
@@ -19,6 +21,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getDrinks();
   }
+
+  
 
   getDrinks() {
     this.http.get<Drink[]>('https://localhost:7287/Drink').subscribe(
@@ -31,5 +35,9 @@ export class AppComponent implements OnInit {
     );
   }
 
-  title = 'cafe_lazar.client';
+  alert(args: number) {
+    window.alert('La boisson coute' + args / 100 + '€');
+  }
+
+  title = 'cafe_lazard.client';
 }
