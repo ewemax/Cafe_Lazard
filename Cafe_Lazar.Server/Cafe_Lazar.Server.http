@@ -1,6 +1,6 @@
 @Cafe_Lazar.Server_HostAddress = http://localhost:5111
 
-GET {{Cafe_Lazar.Server_HostAddress}}/weatherforecast/
+GET {{Cafe_Lazar.Server_HostAddress}}/DrinkController/
 Accept: application/json
 
 ###

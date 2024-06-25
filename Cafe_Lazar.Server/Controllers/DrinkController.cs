@@ -1,4 +1,6 @@
 using Cafe_Lazar.Server.Model;
+using Cafe_Lazard.Server.Interface;
+using Cafe_Lazard.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafe_Lazar.Server.Controllers
@@ -9,16 +11,18 @@ namespace Cafe_Lazar.Server.Controllers
     {
 
         private readonly ILogger<DrinkController> _logger;
+        private IDrinkService DrinkService;
 
-        public DrinkController(ILogger<DrinkController> logger)
+        public DrinkController(ILogger<DrinkController> logger, IDrinkService drinkService)
         {
             _logger = logger;
+            DrinkService= drinkService;
         }
 
         [HttpGet(Name = "GetListOfDrink")]
         public IEnumerable<Drink> GetListOfDrink()
         {
-           return  ListOfDrink.GetAllDrink();
+           return DrinkService.GetallDrinks();
         }
        
     }
